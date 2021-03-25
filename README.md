@@ -67,6 +67,8 @@ confusionMatrix$overall[1]
 
 > plot(varImp(model_data))
 
+        ![image](https://user-images.githubusercontent.com/81325654/112400251-33c61e80-8cc5-11eb-902a-314f2315c6e4.png)
+
 > confusionMatrix$overall[1]
 
         Accuracy 
