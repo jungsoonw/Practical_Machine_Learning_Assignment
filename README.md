@@ -36,6 +36,34 @@ plot(varImp(model_data))
 
 confusionMatrix$overall[1]
 
+# Results
+
+> model_data$finalModel
+
+Call:
+ randomForest(x = x, y = y, mtry = param$mtry) 
+               Type of random forest: classification
+                     Number of trees: 500
+No. of variables tried at each split: 17
+
+        OOB estimate of  error rate: 0.7%
+Confusion matrix:
+     A    B    C    D    E class.error
+A 3343    3    1    0    1 0.001493429
+B   16 2257    6    0    0 0.009653357
+C    0   14 2032    8    0 0.010710808
+D    0    1   22 1905    2 0.012953368
+E    0    0    1    8 2156 0.004157044
+> plot(varImp(model_data))
+> confusionMatrix$overall[1]
+Accuracy 
+0.993245 
+
+# Graph  
+
+![image](https://user-images.githubusercontent.com/81325654/112399898-5d327a80-8cc4-11eb-8778-81181e626162.png)
+
+
 # 3) predict the test set. 
 
 Answers are: B A B A A E D B A A B C B A E E A B B B
@@ -49,4 +77,10 @@ testing_data<-testing_data[,-c(1:7)]
 predict_testing <- predict(model_data, testing_data)
 
 save(predict_testing,file='predict_testing.RData')
+
+# Results
+
+> predict_testing
+ [1] B A B A A E D B A A B C B A E E A B B B
+Levels: A B C D E
 
